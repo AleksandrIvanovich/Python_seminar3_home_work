@@ -15,13 +15,12 @@ n = give_int("Введите число (количество элементов
 user_list = []
 summ = 0
 for i in range(n):
-    user_list.append(random.randint(1,9))   
+    user_list.append(random.randint(-9,9))   
     if i == 1:
         summ = summ + user_list[i]
-        print(user_list[i])
     else:
         if i % 2 != 0:
             summ = summ + user_list[i]  
-            print(user_list[i]) 
+            
 print(user_list)  
-print(f'Сумма элементов списка, стоящих на нечётной позиции:{summ}')  
+print(f'Сумма элементов списка, стоящих на нечётной позиции равна {summ}')  
