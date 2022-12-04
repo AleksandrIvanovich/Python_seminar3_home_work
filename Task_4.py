@@ -11,22 +11,18 @@ def give_int(input_string):
             return num
         except:
             print('Попробуйте еще раз. Вы ввели не число')
-a = give_int('Введите целое число: ')  
-b = give_int('Введите целое число: ') 
-list = []
-result = 0         
-def converting_num(a, b):
-    ost = a % b
-     
-    if ost !=0:
-        result = a // b
-        list.insert(0,ost)
-    return result
-    #     if number % sistema == 1:
-    #         list.append(1)
-    #     return    
-    # number = converting_num
-    # return list 
+number = give_int('Введите целое число: ')
+z =  give_int('Введите целое число (число системы в которую нужно перевести число): ') 
+result_list = []
+num = number
+while num != 0:
+    if num - (num // z)*z >= 1:
+        result_list.insert(0,(num - (num // z)*z))
+        num = num // z
+    if num - (num // z)*z == 0:
+        result_list.insert(0,0)    
+        num = num // z      
+else:
+    result = " ".join(map(str,result_list[1:]))
     
-print(list)
-print(result)
+print(f'Число {number} в системе измерения {z} равно: {result}.')
