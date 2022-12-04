@@ -14,15 +14,15 @@ def give_int(input_string):
             print('Попробуйте еще раз. Вы ввели не число')
 
 namber = give_int("Введите число (колличество элементов в массиве): ")
-max_namber_list = give_int("Введите число (максимально возможный элемент массива): ")
+namber_list = give_int("Введите число N(диапазон массива от -N до N): ")
 n = give_int("Введите число (количество цифр после точки): ")
 rand_list = []
 new_list = []
 max_part = 0
 min_part = 1
 for i in range(0,namber):
-    rand_list.append(round(random.uniform(0,max_namber_list),n))
-    fractional_num = round((rand_list[i] % 1),n)  
+    rand_list.append(round(random.uniform((namber_list)*-1,namber_list),n))
+    fractional_num = round((abs(rand_list[i]) % 1),n)  
     new_list.append(fractional_num)
     if max_part < new_list[i]:
         max_part = new_list[i]
