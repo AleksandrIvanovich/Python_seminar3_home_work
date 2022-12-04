@@ -9,7 +9,7 @@ def give_int(input_string):
             num = int(input(input_string))
             return num
         except:
-            print('Попробуйте еще раз. Вы ввели не число')
+            print('Попробуйте еще раз. Вы ввели не число.')
             
 n = give_int("Введите число (количество элементов в списке):\n") 
 user_list = []
@@ -23,4 +23,4 @@ for i in range(n):
             summ = summ + user_list[i]  
             
 print(user_list)  
-print(f'Сумма элементов списка, стоящих на нечётной позиции равна {summ}')  
+print(f'Сумма элементов списка, стоящих на нечётной позиции равна {summ}\n')  
