@@ -15,18 +15,19 @@ def give_int(input_string):
 
 namber = give_int("Введите число (колличество элементов в массиве): ")
 max_namber_list = give_int("Введите число (максимально возможный элемент массива): ")
+n = give_int("Введите число (количество цифр после точки): ")
 rand_list = []
 new_list = []
 max_part = 0
 min_part = 1
 for i in range(0,namber):
-    rand_list.append(round(random.uniform(0,max_namber_list),4))
-    fractional_num = round((rand_list[i] % 1),4)  
+    rand_list.append(round(random.uniform(0,max_namber_list),n))
+    fractional_num = round((rand_list[i] % 1),n)  
     new_list.append(fractional_num)
     if max_part < new_list[i]:
         max_part = new_list[i]
     if min_part > new_list[i]:
         min_part = new_list[i]
-    result = round((max_part - min_part),4)   
+    result = round((max_part - min_part),n)   
            
 print(f'Разницу между максимальным {max_part} и минимальным {min_part} значением \nдробной части элементов массива \n{rand_list} равна: {result}') 
